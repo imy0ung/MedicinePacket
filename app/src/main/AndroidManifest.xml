@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- vibration permission and receive boot -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedicinePacket"
         tools:targetApi="31">
+        <activity
+            android:name=".SettingAlarmActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -1,5 +1,6 @@
 package com.example.medicinepacket
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -25,21 +26,25 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         val FireBaseData = mutableListOf<Data>()
 
         // data 할당 : FireBase를 통한 data 받기
-        for (i in 1..50) {
+        for (i in 1..10) {
             var data = Data(medicineImage = "", medicineName = "타이레놀$i", alarmClock = "12:00", eatingDay = "3/22", BLD = "점심")
             FireBaseData.add(data)
         }
         // data 할당
 
-
         // RecyclerView : 사용
         var adapter = Adapter()
         adapter.FireBaseData = FireBaseData
-        // adapter 연동
         binding.itemView.adapter = adapter
         binding.itemView.layoutManager = LinearLayoutManager(mainActivity) // linear하게 띄우고싶어서
+
+        // Activity 간 이동
+        binding.plusAlarm.setOnClickListener {
+            val nextIntent = Intent(mainActivity, SettingAlarmActivity::class.java)
+            startActivity(nextIntent)
+        } // Intent와 startActivity를 이용해, Activity간 이동을 구현한다.
+
         return binding.root
-        // RecyclerView
     }
 }
 

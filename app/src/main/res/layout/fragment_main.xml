@@ -32,13 +32,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="다음 먹어야 할 약"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="타이레놀"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -54,6 +54,7 @@
         >
 
         <ImageButton
+            android:id ="@+id/plusAlarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_add_24"
@@ -61,6 +62,7 @@
             />
 
         <ImageButton
+            android:id ="@+id/delAlarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_delete_24"
