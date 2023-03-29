@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        // BottomNavigationView
         // 초기 화면 띄우기
         changeFragment(MainFragment())
 
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
         }
+        // BottomNavigationView
     }
 
     // Fragment 넘기기, supprotFragmentManger을 통해 transaction 시도, viewPager2에 구현
